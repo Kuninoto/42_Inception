@@ -18,8 +18,8 @@
 https://www.youtube.com/watch?v=eyNBf1sqdBQ  
 https://www.youtube.com/watch?v=cjXI-yxqGTI  
 
-**Docker File**  
-[Dockerfile docs](https://docs.docker.com/engine/reference/builder/)
+**Dockerfile**  
+[Dockerfile docs](https://docs.docker.com/engine/reference/builder/)  
 [RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
 
 **What is a Daemon?**  
@@ -30,15 +30,24 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 [Docker docs](https://docs.docker.com/get-started/overview/)  
 [Get started with Docker](https://docs.docker.com/get-started/)
 
+**Docker commands**  
+`docker rm $(docker ps -a -q)` - Deletes all containers  
+`docker rmi $(docker images -q)` - Deletes all images
+
 *** First Container ***  
 **What is Nginx?**  
 [Nginx Software](https://en.wikipedia.org/wiki/Nginx)  
-[Nginx config files](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)
+**Nginx configuration**  
+[Nginx config files](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)  
+[Learn Proper Nginx Configuration Context Logic](https://www.youtube.com/watch?v=C5kMgshNc6g)  
 
 **What is TLS?**  
 [TLS Protocol](https://en.wikipedia.org/wiki/Transport_Layer_Security) 
 
-**Configuring nginx for TLS**  
+**What is SSL?**  
+[SSL definition](https://www.cloudflare.com/learning/ssl/what-is-ssl/)
+
+**Configuring Nginx for TLS**  
 [How to properly configure your nginx for tls](https://medium.com/@mvuksano/how-to-properly-configure-your-nginx-for-tls-564651438fe0)
 
 
