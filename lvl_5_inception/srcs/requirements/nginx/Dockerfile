@@ -2,12 +2,19 @@
 # https://www.debian.org/releases/
 FROM debian:10.13
 
-# refresh && update system repositories
+RUN echo "Updating the container..."
+
 # -yq yes quiet
 RUN apt-get update -yq && apt-get upgrade -yq
 
+RUN echo "Done!"
+
 # install nginx
 RUN apt-get install nginx -yq
+
+# copy pre-designed config file to the right folder 
+# inside the container
+COPY /config/nginx.conf /etc/nginx/
 
 # Defining 443 as the port that this container will listen to
 EXPOSE 443

@@ -6,10 +6,10 @@
 
 ### Useful links: 
 **What is Docker?**  
-[Docker Software](https://en.wikipedia.org/wiki/Docker_(software))  
+[Docker Wikipedia](https://en.wikipedia.org/wiki/Docker_(software))  
 [Docker in 100 seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ)  
 [What is Docker in 5 minutes](https://www.youtube.com/watch?v=_dfLOzuIg2o)  
-[Introduction To Docker and Docker Containers](https://www.youtube.com/watch?v=JSLpG_spOBM)  
+[Introduction to Docker and Docker Containers](https://www.youtube.com/watch?v=JSLpG_spOBM)  
 
 **Learning Docker**  
 [Learn Docker in 7 easy steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)
@@ -18,15 +18,29 @@
 https://www.youtube.com/watch?v=eyNBf1sqdBQ  
 https://www.youtube.com/watch?v=cjXI-yxqGTI  
 
-*** First Container ***
-**What is Nginx?**
-[Nginx Software](https://en.wikipedia.org/wiki/Nginx)
+**Docker File**  
+[Dockerfile docs](https://docs.docker.com/engine/reference/builder/)
+[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
 
-**What is TLS?**
+**What is a Daemon?**  
+[Daemon Wikipedia](https://en.wikipedia.org/wiki/Daemon_(computing))  
+[What is a daemon?](https://www.techtarget.com/whatis/definition/daemon)
+
+**Docker Official Documentation**  
+[Docker docs](https://docs.docker.com/get-started/overview/)  
+[Get started with Docker](https://docs.docker.com/get-started/)
+
+*** First Container ***  
+**What is Nginx?**  
+[Nginx Software](https://en.wikipedia.org/wiki/Nginx)  
+[Nginx config files](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)
+
+**What is TLS?**  
 [TLS Protocol](https://en.wikipedia.org/wiki/Transport_Layer_Security) 
 
-**Docker Commands**
-[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
+**Configuring nginx for TLS**  
+[How to properly configure your nginx for tls](https://medium.com/@mvuksano/how-to-properly-configure-your-nginx-for-tls-564651438fe0)
+
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
