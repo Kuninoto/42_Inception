@@ -1,6 +1,32 @@
+# latest docker-compose version
+# 22/05/2023
+version: "3.8"
+
 services:
   nginx:
+    container_name: nginx
+    build: ./requirements/nginx/.
+
+    # port forwarding
+    ports:
+      - 443:443
+
+    env_file:
+      - .env
+    restart: always
 
   mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb/.
+
+    env_file:
+      - .env
+    restart: always
 
   wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress/.
+
+    env_file:
+      - .env
+    restart: always
