@@ -39,38 +39,52 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 `docker pull` - Pull a Docker image from a registry, such as [Docker Hub](https://hub.docker.com/)  
 `docker push` - Push a Docker image to a registry  
 `docker build` - Build a Docker image from a Dockerfile  
+`docker build -t <image_name>` - Build a Docker image, named _<image_name>_ from a Dockerfile    
 `docker run` - Run a container based on a Docker image  
 `docker stop` - Stop a running container  
 `docker ps` - List the running containers  
+`docker ps -a` - List all running and non-running containers  
+`docker ps -l` - List the last created container
 `docker ps -aq` - List all containers ID's  
 `docker images` - List all the top level images, their repositories and their sizes  
+`docker images -q` - List all images ID's  
 `docker rm` - Remove a container  
-`docker rm $(docker ps -a -q)` - Remove all containers  
+`docker rm $(docker ps -aq)` - Remove all containers  
 `docker rmi` - Remove a Docker image  
 `docker rmi $(docker images -q)` - Remove all Docker images
 `docker exec` - Execute a command in a running container  
-`docker exec -it <container_id> /bin/bash` - Spawns a bash session inside the container that we can access  
+`docker exec -it <container_name_or_id> /bin/bash` - Spawns a bash session inside the container that we can access  
 `docker logs` - Display the logs of a container  
 `docker inspect` - Provides detailed information about a container  
-`docker run -d -p <port>:<port_to_forward_to> --name <container_name> <image_name>` - Runs a container from _<image_name>_ Docker Image in detach mode with _<container_name>_ name and port forwarding port -> port_to_forward_to   
+`docker run -d -p <port>:<mapped_port> --name <container_name> <image_name>` - Runs a container from _<image_name>_ Docker Image in detach mode with _<container_name>_ name and port mapping port -> mapped_port  
 
-
-*** First Container ***  
 **What is Nginx?**  
 [Nginx Software](https://en.wikipedia.org/wiki/Nginx)  
+
 **Nginx configuration**  
 [Nginx config files](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)  
 [Learn Proper Nginx Configuration Context Logic](https://www.youtube.com/watch?v=C5kMgshNc6g)  
 
 **What is TLS?**  
-[TLS Protocol](https://en.wikipedia.org/wiki/Transport_Layer_Security)  
+[Definition](https://en.wikipedia.org/wiki/Transport_Layer_Security)  
 
 **What is SSL?**  
-[SSL definition](https://www.cloudflare.com/learning/ssl/what-is-ssl/)  
+[Definition](https://www.cloudflare.com/learning/ssl/what-is-ssl/)  
 
 **Configuring Nginx for TLS**  
-[How to properly configure your nginx for tls](https://medium.com/@mvuksano/how-to-properly-configure-your-nginx-for-tls-564651438fe0)  
+[How to properly configure your Nginx for TLS](https://medium.com/@mvuksano/how-to-properly-configure-your-nginx-for-tls-564651438fe0)  
+Generating a self-signed certificate  
+    - https://www.baeldung.com/openssl-self-signed-cert  
+    - https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl  
 
+
+**MariaDB**  
+[Introduction](https://www.redhat.com/sysadmin/mysql-mariadb-introduction)  
+
+**WordPress**  
+[Installing WordPress with LEMP stack](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10#step-4-downloading-wordpress)  
+
+[How to install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)  
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  

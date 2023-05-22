@@ -1,6 +1,6 @@
 # Penultimate stable version: Debian 10 "buster" 
 # https://www.debian.org/releases/
-FROM debian:10.13
+FROM debian:buster
 
 RUN apt-get update -yq && apt-get upgrade -yq
 
@@ -24,8 +24,6 @@ RUN apt install -yq php7.3 \
                     php7.3-xml \
                     php7.3-zip \
                     curl
-
-
 
 
 

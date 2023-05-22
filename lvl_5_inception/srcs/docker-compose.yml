@@ -7,7 +7,7 @@ services:
     container_name: nginx
     build: ./requirements/nginx/.
 
-    # port forwarding
+    # port mapping
     ports:
       - 443:443
 

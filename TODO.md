@@ -1,11 +1,13 @@
-Setup mariadb
+Setup Nginx with TLS ✅
 
-Setup docker volumes
+Setup MariaDB
+
+Setup Docker volumes
 Setup the necessary env variables on .env
 
-Setup wordpress
+Setup WordPress
 
-Setup docker network
+Setup Docker network
 
 Nginx is up but currently I'm unable to request its default page
 

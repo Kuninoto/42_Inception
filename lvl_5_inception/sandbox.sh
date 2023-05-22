@@ -1,4 +1,4 @@
-#! /usr/bin/sh
+#!/bin/sh
 
 sudo apt update -yq && sudo apt upgrade -yq
 
