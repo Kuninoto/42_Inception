@@ -44,5 +44,4 @@ else
     mysql < temp.sql
 fi
 
-
 service mysql stop;
