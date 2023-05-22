@@ -3,3 +3,12 @@
 FROM debian:10.13
 
 RUN apt-get update -yq && apt-get upgrade -yq
+
+# Install mariadb
+RUN apt install mariadb-client mariadb-server -yq
+
+
+
+
+# Run mysql daemon to keep the container alive
+# CMD 

@@ -5,7 +5,7 @@ FROM debian:10.13
 RUN apt-get update -yq && apt-get upgrade -yq
 
 # Install nginx and openssl
-RUN apt install nginx -yq && apt install openssl -yq
+RUN apt install nginx openssl -yq
 
 # Copy pre-designed config file to the container
 COPY /config/nginx.conf /etc/nginx/
