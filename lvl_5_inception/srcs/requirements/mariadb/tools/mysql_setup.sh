@@ -19,9 +19,12 @@ DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
 FLUSH PRIVILEGES;
 EOF
 
+# Change bind-address from 127.0.0.1
+# to 0.0.0.0 so that any network can connect
+sed -i 's/\b127.0.0.1/\b0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+
 # Execute a query to check if the database already exists and capture the output
 query_result=$(mysql -u username -p -e "SHOW DATABASES LIKE '${MYSQL_DB_NAME}';")
-
 # Check the query_result
 if [[ $query_result == *"$MYSQL_DB_NAME"* ]]; then
     echo "Database \"$MYSQL_DB_NAME\" already exists"
@@ -37,6 +40,9 @@ else
 
     # Grant all privileges to the new user
     echo "GRANT ALL PRIVILEGES ON $MYSQL_DB_NAME.* TO '$MYSQL_DB_USER'@'%';" >> temp.sql
+
+    # Change the root's password to MYSQL_DB_ROOT_PASSWORD's value
+    echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_DB_ROOT_PASSWORD';" >> db1.sql
 
     # Flush the privileges to ensure that the changes take effect in the current session
     echo "FLUSH PRIVILEGES;" >> temp.sql

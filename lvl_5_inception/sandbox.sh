@@ -22,9 +22,15 @@ sudo apt-get install docker-ce\
                      docker-buildx-plugin\
                      docker-compose-plugin\
                      -yq
+
 # Check if both Docker and Docker-Compose were correctly installed
-docker --version
-docker-compose --version
+if [[ -x $(command -v "docker") && -x $(command -v "docker-compose") ]]; then
+    echo "Docker and Docker-Compose successfully installed!"
+    docker --version
+    docker-compose --version
+else
+    echo "ERROR: Docker or Docker-Compose installation failed!"
+fi
 
 # Allow non-root users to run Docker
-sudo chmod 666 /var/run/docker.sock
+#sudo chmod 666 /var/run/docker.sock

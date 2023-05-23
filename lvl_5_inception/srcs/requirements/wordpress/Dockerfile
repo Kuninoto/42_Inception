@@ -16,21 +16,22 @@ RUN apt install -yq php7.3 \
                     php7.3-fileinfo \
                     php7.3-fpm \
                     php7.3-gd \
-                    php7.3-hash \
                     php7.3-imagick \
                     php7.3-intl \
                     php7.3-json \
                     php7.3-mbstring \
                     php7.3-mysql \
-                    php7.3-pcre \
                     php7.3-soap\
                     php7.3-xml \
                     php7.3-xmlrpc \
                     php7.3-zip \
                     curl
 
-# Copy the WordPress config file to the container
-COPY ./config/wp-config.php /temp/wp-config.php
+# Copy the install_wordpress script
+COPY ./tools/install_wordpress.sh /tmp/install_wordpress.sh
 
-# find a command that keeps this container alive
-#CMD 
+# Runs install_wordpress script
+RUN bash install_wordpress.sh
+
+# Run php-fpm7.3 in the foreground, keeping the container alive
+CMD ["php-fpm7.3", "-F", "-R"]

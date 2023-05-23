@@ -12,28 +12,40 @@
 [Introduction to Docker and Docker Containers](https://www.youtube.com/watch?v=JSLpG_spOBM)  
 
 **Learning Docker**  
-[Learn Docker in 7 easy steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)
-[Docker networking](https://www.youtube.com/watch?v=bKFMS5C4CG0)  
+[Learn Docker in 7 easy steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)  
 
 **Virtual Machines vs. Containers**  
 https://www.youtube.com/watch?v=eyNBf1sqdBQ  
 https://www.youtube.com/watch?v=cjXI-yxqGTI  
 
-**Dockerfile**  
-[Dockerfile Docs](https://docs.docker.com/engine/reference/builder/)  
-[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
-
-
-**Docker-Compose File**
-[Docker Compose restart policies](https://www.baeldung.com/ops/docker-compose-restart-policies)  
-
 **What is a Daemon?**  
-[Daemon Wikipedia](https://en.wikipedia.org/wiki/Daemon_(computing))  
+[Wikipedia](https://en.wikipedia.org/wiki/Daemon_(computing))  
 [What is a daemon?](https://www.techtarget.com/whatis/definition/daemon)
 
 **Docker Official Documentation**  
 [Docker docs](https://docs.docker.com/get-started/overview/)  
 [Get started with Docker](https://docs.docker.com/get-started/)
+
+**Dockerfile**  
+[Dockerfile Docs](https://docs.docker.com/engine/reference/builder/)  
+[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
+
+**Docker Compose File**
+[Reference](https://docs.docker.com/engine/reference/commandline/compose/)  
+[20m Tutorial](https://www.youtube.com/watch?v=qH4ZKfwbO8w)  
+[30m Tutorial](https://www.youtube.com/watch?v=HG6yIjZapSA)  
+[Docker Compose in 12m](https://www.youtube.com/watch?v=Qw9zlE3t8Ko)  
+[Docker Compose restart policies](https://www.baeldung.com/ops/docker-compose-restart-policies)  
+
+**Docker Volumes**
+[Official Docs](https://docs.docker.com/storage/volumes/)  
+[What are Docker volumes and how do you use them?](https://www.howtogeek.com/devops/what-are-docker-volumes-and-how-do-you-use-them/)  
+[Basics of Docker Volumes | Tutorial](https://www.youtube.com/watch?v=utbuNtqlLh0)  
+[Docker Volumes explained in 6m](https://www.youtube.com/watch?v=p2PH_YPCsis)  
+
+**Docker Networking**
+[Tutorial, all network types explained](https://www.youtube.com/watch?v=5grbXvV_DSk)  
+[40min video](https://www.youtube.com/watch?v=bKFMS5C4CG0)  
 
 **Useful Docker commands**  
 `docker pull` - Pull a Docker image from a registry, such as [Docker Hub](https://hub.docker.com/)  
@@ -59,14 +71,14 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 `docker run -d -p <port>:<mapped_port> --name <container_name> <image_name>` - Runs a container from _<image_name>_ Docker Image in detach mode with _<container_name>_ name and port mapping port -> mapped_port  
 
 **What is Nginx?**  
-[Nginx Software](https://en.wikipedia.org/wiki/Nginx)  
+[Wikipedia](https://en.wikipedia.org/wiki/Nginx)  
 
 **Nginx configuration**  
 [Nginx config files](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts)  
 [Learn Proper Nginx Configuration Context Logic](https://www.youtube.com/watch?v=C5kMgshNc6g)  
 
 **What is TLS?**  
-[Definition](https://en.wikipedia.org/wiki/Transport_Layer_Security)  
+[Wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)  
 
 **What is SSL?**  
 [Definition](https://www.cloudflare.com/learning/ssl/what-is-ssl/)  
@@ -84,6 +96,7 @@ Generating a self-signed certificate
 **WordPress**  
 [Installing WordPress with LEMP stack](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10#step-4-downloading-wordpress)  
 
+**General**  
 [How to install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)  
 
 ---

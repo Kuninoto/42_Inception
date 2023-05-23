@@ -12,4 +12,4 @@ COPY ./tools/mysql_setup.sh /mysql_setup.sh
 RUN bash mysql_setup.sh
 
 # Run mysql daemon with the safe script to keep the container alive
-CMD mysqld_safe
+CMD ["mysqld_safe"]

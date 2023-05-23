@@ -2,31 +2,50 @@
 # 22/05/2023
 version: "3.8"
 
+# Set a docker network
+# allowing containers in the same network
+# to communicate with each other treating
+# their container_names as hostnames
+networks:
+  inception:
+    name: inception
+    driver: bridge
+
 services:
-  nginx:
-    container_name: nginx
-    build: ./requirements/nginx/.
-
-    # port mapping
-    ports:
-      - 443:443
-
-    env_file:
-      - .env
-    restart: always
-
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb/.
+    image: mariadb
+    expose:
+      - 3306
 
-    env_file:
-      - .env
+    env_file: .env
+    networks: inception
+    restart: always
+
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx/.
+    image: nginx
+    # port mapping
+    ports: 443:443
+    networks: inception
+    env_file: .env
     restart: always
 
   wordpress:
     container_name: wordpress
     build: ./requirements/wordpress/.
+    image: wordpress
+    # Ensure that MariaDB database is ready
+    depends_on:
+      - mariadb
+    init: true
+    expose:
+      - 9000
 
+    networks:
+      - inception
     env_file:
       - .env
     restart: always

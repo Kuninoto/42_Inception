@@ -19,6 +19,6 @@ RUN openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:4096 \
 # Defining 443 as the port that this container will listen to
 EXPOSE 443
 
-# Start Nginx in the foreground, disabling daemon mode
+# Start Nginx in the foreground, disabling daemon mode,
 # thus keeping the container alive
 CMD ["nginx", "-g", "daemon off;"]
