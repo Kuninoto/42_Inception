@@ -2,6 +2,10 @@
 # https://www.debian.org/releases/
 FROM debian:buster
 
+LABEL maintainer="nnuno-ca@student.42porto.com"
+LABEL version="1.0"
+LABEL description="MariaDB Docker image for the Inception 42 project"
+
 RUN apt-get update -yq && apt-get upgrade -yq
 
 # Install MariaDB
@@ -11,5 +15,6 @@ RUN apt install mariadb-server -yq
 COPY ./tools/mysql_setup.sh /mysql_setup.sh
 RUN bash mysql_setup.sh
 
-# Run mysql daemon with the safe script to keep the container alive
-CMD ["mysqld_safe"]
+# Start the MySQL server process in the foreground,
+# thus keeping the container alive
+CMD ["mysqld"]

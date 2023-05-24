@@ -4,14 +4,14 @@
 
 ### Subject (v1.3): [Inception en_subject](./extras/en.subject_inception.pdf)  
 
-### Useful links: 
+### Useful links:  
+
 **What is Docker?**  
 [Wikipedia](https://en.wikipedia.org/wiki/Docker_(software))  
 [Docker in 100 seconds](https://www.youtube.com/watch?v=Gjnup-PuquQ)  
 [What is Docker in 5 minutes](https://www.youtube.com/watch?v=_dfLOzuIg2o)  
 [Introduction to Docker and Docker Containers](https://www.youtube.com/watch?v=JSLpG_spOBM)  
-
-**Learning Docker**  
+[Docker explained simply](https://www.youtube.com/watch?v=_trJf3GbZXg)  
 [Learn Docker in 7 easy steps](https://www.youtube.com/watch?v=gAkwW2tuIqE)  
 
 **Virtual Machines vs. Containers**  
@@ -20,32 +20,43 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 
 **What is a Daemon?**  
 [Wikipedia](https://en.wikipedia.org/wiki/Daemon_(computing))  
-[What is a daemon?](https://www.techtarget.com/whatis/definition/daemon)
+[What is a daemon?](https://www.techtarget.com/whatis/definition/daemon)  
 
 **Docker Official Documentation**  
 [Docker docs](https://docs.docker.com/get-started/overview/)  
-[Get started with Docker](https://docs.docker.com/get-started/)
+[Get started with Docker](https://docs.docker.com/get-started/)  
 
 **Dockerfile**  
 [Dockerfile Docs](https://docs.docker.com/engine/reference/builder/)  
-[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)
+[RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)  
+[COPY | Getting Your Own Code in a Docker Container | Beginner's Tutorial](https://www.youtube.com/watch?v=rI6mrsjFHII)  
+
+**Docker Volumes**
+[Official Docs](https://docs.docker.com/storage/volumes/)  
+[CLI](https://docs.docker.com/engine/reference/commandline/volume_create/)  
+[What are Docker volumes and how do you use them?](https://www.howtogeek.com/devops/what-are-docker-volumes-and-how-do-you-use-them/)  
+[Basics of Docker Volumes | Tutorial](https://www.youtube.com/watch?v=utbuNtqlLh0)  
+[Docker Volumes explained in 6m](https://www.youtube.com/watch?v=p2PH_YPCsis)  
+[Docker Volumes | Use Local Folders and Directories](https://www.youtube.com/watch?v=ex4XMet78q8)  
+[Docker Volumes Explained (PostgreSQL example)](https://www.youtube.com/watch?v=G-5c25DYnfI)  
+[Docker Volumes with Persistent Data in Containers | Beginners Tutorial](https://www.youtube.com/watch?v=OrQLrqQm4M0)  
+
+**Docker Networking**
+[Tutorial, all network types explained](https://www.youtube.com/watch?v=5grbXvV_DSk)  
+[40min video](https://www.youtube.com/watch?v=bKFMS5C4CG0)  
+[Bridge Networks](https://docs.docker.com/network/bridge/)  
 
 **Docker Compose File**
+[Official Docs](https://docs.docker.com/compose/)  
 [Reference](https://docs.docker.com/engine/reference/commandline/compose/)  
 [20m Tutorial](https://www.youtube.com/watch?v=qH4ZKfwbO8w)  
 [30m Tutorial](https://www.youtube.com/watch?v=HG6yIjZapSA)  
 [Docker Compose in 12m](https://www.youtube.com/watch?v=Qw9zlE3t8Ko)  
 [Docker Compose restart policies](https://www.baeldung.com/ops/docker-compose-restart-policies)  
-
-**Docker Volumes**
-[Official Docs](https://docs.docker.com/storage/volumes/)  
-[What are Docker volumes and how do you use them?](https://www.howtogeek.com/devops/what-are-docker-volumes-and-how-do-you-use-them/)  
-[Basics of Docker Volumes | Tutorial](https://www.youtube.com/watch?v=utbuNtqlLh0)  
-[Docker Volumes explained in 6m](https://www.youtube.com/watch?v=p2PH_YPCsis)  
-
-**Docker Networking**
-[Tutorial, all network types explained](https://www.youtube.com/watch?v=5grbXvV_DSk)  
-[40min video](https://www.youtube.com/watch?v=bKFMS5C4CG0)  
+[Env File](https://docs.docker.com/compose/environment-variables/env-file/)  
+[Volumes top-level element](https://docs.docker.com/compose/compose-file/07-volumes/)  
+[Networks top-level element](https://docs.docker.com/compose/compose-file/06-networks/)  
+[Services top-level element](https://docs.docker.com/compose/compose-file/05-services/)  
 
 **Useful Docker commands**  
 `docker pull` - Pull a Docker image from a registry, such as [Docker Hub](https://hub.docker.com/)  
@@ -69,6 +80,7 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 `docker logs` - Display the logs of a container  
 `docker inspect` - Provides detailed information about a container  
 `docker run -d -p <port>:<mapped_port> --name <container_name> <image_name>` - Runs a container from _<image_name>_ Docker Image in detach mode with _<container_name>_ name and port mapping port -> mapped_port  
+`docker system prune` - Hard cleanup of the Docker environment (stopped containers, unused networks, dangling images and build cache)  
 
 **What is Nginx?**  
 [Wikipedia](https://en.wikipedia.org/wiki/Nginx)  
@@ -98,6 +110,7 @@ Generating a self-signed certificate
 
 **General**  
 [How to install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)  
+[How Docker really works under the hood](https://www.youtube.com/watch?v=-YnMr1lj4Z8)  
 
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  

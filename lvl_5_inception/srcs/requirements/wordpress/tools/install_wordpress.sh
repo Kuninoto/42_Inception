@@ -1,31 +1,26 @@
 #!/bin/sh
 
+mkdir -p /var/www/
+mkdir -p /var/www/html
+cd /var/www/html
+
+set -x
+
 # Downloads the wp-cli PHAR (PHP Archive) file from the GitHub repository preserving its name
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
 # Makes wp-cli.phar executable
 chmod +x wp-cli.phar
 
-# Move wp-cli.phar to a path that's on PATH env var and rename it as "wp-cli"
+# Move wp-cli.phar to a path that's on PATH env var
+# and rename it as "wp-cli"
 mv wp-cli.phar /usr/local/bin/wp-cli
 
 # Downloads the latest version of WordPress to the current directory
 wp-cli core download --allow-root
 
-# Move the sample WordPress config file to /var/www/html,
-# renaming it to wp-config
-mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
-
-# Alter the WordPress default config file
-# Search for the first occurance of left field and substitute for the right field
-#line 23
-sed -i -r "s/DB_NAME/$MYSQL_DB_NAME/1" /var/www/html/wp-config.php
-#line 26
-sed -i -r "s/DB_USER/$MYSQL_DB_USER/1" /var/www/html/wp-config.php
-#line 29
-sed -i -r "s/DB_PASSWORD/$MYSQL_DB_PASSWORD/1" /var/www/html/wp-config.php
-#line 32
-sed -i -r "s/localhost/mariadb/1" /var/www/html/wp-config.php
+# Move our WordPress config file to its expected directory
+mv /tmp/wp-config.php /var/www/html/
 
 # Installs WordPress and sets up the basic configuration for the site.
 # --url specifies the URL of the site
@@ -52,9 +47,3 @@ sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm
 
 # Creates /run/php directory, which is used by PHP-FPM to store Unix domain sockets
 mkdir /run/php
-
-# Config php.ini
-sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.3/fpm/php.ini
-sed -i "s/upload_max_filesize = .*/upload_max_filesize = 128M/" /etc/php/7.3/fpm/php.ini
-sed -i "s/zlib.output_compression = .*/zlib.output_compression = on/" /etc/php/7.3/fpm/php.ini
-sed -i "s/max_execution_time = .*/max_execution_time = 18000/" /etc/php/7.3/fpm/php.ini

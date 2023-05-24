@@ -2,6 +2,10 @@
 # https://www.debian.org/releases/
 FROM debian:buster
 
+LABEL maintainer="nnuno-ca@student.42porto.com"
+LABEL version="1.0"
+LABEL description="Nginx Docker image for the Inception 42 project"
+
 RUN apt-get update -yq && apt-get upgrade -yq
 
 # Install nginx and openssl
