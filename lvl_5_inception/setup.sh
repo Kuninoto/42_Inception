@@ -1,6 +1,6 @@
 sudo useradd nnuno-ca --no-create-home "nnuno-ca" --password "plsdonthackme123"
 
-sudo apt update -yq && sudo apt upgrade -yq
+sudo apt update -yq
 
 # Install prerequisites
 sudo apt install apt-transport-https\
@@ -21,6 +21,7 @@ sudo apt-get install docker-ce\
                      containerd.io\
                      docker-buildx-plugin\
                      docker-compose-plugin\
+                     docker-compose\
                      -yq
 
 # Check if both Docker and Docker-Compose were correctly installed
