@@ -19,7 +19,7 @@ mv wp-cli.phar /usr/local/bin/wp-cli
 # Downloads the latest version of WordPress to the current directory
 wp-cli core download --allow-root
 
-wp-cli core config --dbname=$MYSQL_DB_NAME --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_DB_HOST
+wp-cli core config --dbname=$MYSQL_DB_NAME --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_DB_HOST --allow-root
 
 # Installs WordPress and sets up the basic configuration for the site.
 # --url specifies the URL of the site

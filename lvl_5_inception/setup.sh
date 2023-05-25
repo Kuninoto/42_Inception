@@ -2,7 +2,9 @@
 
 sudo apt-get update -yq
 
-sudo apt-get install -yq ca-certificates curl gnupg
+sudo apt-get install -yq ca-certificates\
+                         curl\
+                         gnupg
 
 # Add Docker’s official GPG key:
 sudo install -m 0755 -d /etc/apt/keyrings

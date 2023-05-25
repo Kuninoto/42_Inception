@@ -17,31 +17,31 @@ build:
 	fi
 #   --no-cache prevents the docker compose from pulling the 
 #   official images for the services (e.g the official Nginx image)
-	docker-compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress=plain
+	docker compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress=plain
 
-up_detached: 
-	docker-compose -f $(COMPOSE_FILE_PATH) up -d
+up_detached:
+	docker compose -f $(COMPOSE_FILE_PATH) up -d
 
 down:
-	docker-compose -f $(COMPOSE_FILE_PATH) down
+	docker compose -f $(COMPOSE_FILE_PATH) down
 
 start:
-	docker-compose -f $(COMPOSE_FILE_PATH) start
+	docker compose -f $(COMPOSE_FILE_PATH) start
 
 stop:
-	docker-compose -f $(COMPOSE_FILE_PATH) stop
+	docker compose -f $(COMPOSE_FILE_PATH) stop
 
 ps:
-	docker-compose -f $(COMPOSE_FILE_PATH) ps
+	docker compose -f $(COMPOSE_FILE_PATH) ps
 
 rm: stop
-	docker-compose -f $(COMPOSE_FILE_PATH) rm
+	docker compose -f $(COMPOSE_FILE_PATH) rm
 
 rmi: stop
-	docker-compose -f $(COMPOSE_FILE_PATH) down --rmi all
+	docker compose -f $(COMPOSE_FILE_PATH) down --rmi all
 
 delete_volumes:
-	docker-compose -f $(COMPOSE_FILE_PATH) down --volumes
+	docker compose -f $(COMPOSE_FILE_PATH) down --volumes
 
 system_prune:
 	docker system prune
