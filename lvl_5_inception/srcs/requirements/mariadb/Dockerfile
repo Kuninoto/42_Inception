@@ -11,6 +11,9 @@ RUN apt-get update -yq && apt-get upgrade -yq
 # Install MariaDB
 RUN apt install -yq mariadb-server
 
+# Copy mysql config file to its expected directory
+COPY ./config/50-server.cnf /etc/mysql/mariadb.conf.d/
+
 # Copy and run mysql_setup script
 COPY ./tools/mysql_setup.sh /tmp/mysql_setup.sh
 ENTRYPOINT [ "sh", "-c", "/bin/bash /tmp/mysql_setup.sh;" ]

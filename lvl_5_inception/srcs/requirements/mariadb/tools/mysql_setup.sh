@@ -3,25 +3,21 @@
 # Start mysql
 service mysql start
 
-# Automated mysql_secure_installation
-# Set root password
-# Delete anonymous users
-# Delete remote root capabilities
-# Drop database 'test'
-# Also make sure there are lingering permissions to it
-# Flush the privileges to ensure that the changes take effect in the current session
-mysql -sfu root << EOF
-UPDATE mysql.user SET Password=PASSWORD('$MYSQL_ROOT_PASSWORD') WHERE User='root';
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DROP DATABASE IF EXISTS test;
-DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
-FLUSH PRIVILEGES;
-EOF
-
-# Change bind-address from 127.0.0.1
-# to 0.0.0.0 so that any network can connect
-sed -i 's/\b127.0.0.1/\b0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
+## Automated mysql_secure_installation
+## Set root password
+## Delete anonymous users
+## Delete remote root capabilities
+## Drop database 'test'
+## Also make sure there are lingering permissions to it
+## Flush the privileges to ensure that the changes take effect in the current session
+#mysql -sfu root << EOF
+#UPDATE mysql.user SET Password=PASSWORD('$MYSQL_ROOT_PASSWORD') WHERE User='root';
+#DELETE FROM mysql.user WHERE User='';
+#DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+#DROP DATABASE IF EXISTS test;
+#DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+#FLUSH PRIVILEGES;
+#EOF
 
 # Create a database named MYSQL_DB_NAME'S value if it doesn't exist already
 # Create a user named MYSQL_USER'S value if it doesn't exist already
@@ -29,10 +25,10 @@ sed -i 's/\b127.0.0.1/\b0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 # Change the root's password to MYSQL_ROOT_PASSWORD's value
 # Flush the privileges to ensure that the changes take effect in the current session
 mysql << EOF
-CREATE DATABASE IF NOT EXISTS $MYSQL_DB_NAME ;
-CREATE USER IF NOT EXISTS '$MYSQL_USER'@localhost IDENTIFIED BY '$MYSQL_PASSWORD' ;
-GRANT ALL PRIVILEGES ON $MYSQL_DB_NAME.* TO '$MYSQL_USER'@'%' ;
-ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD' ;
+CREATE DATABASE IF NOT EXISTS $MYSQL_DB_NAME;
+CREATE USER IF NOT EXISTS '$MYSQL_USER'@localhost IDENTIFIED BY '$MYSQL_PASSWORD';
+GRANT ALL PRIVILEGES ON $MYSQL_DB_NAME.* TO '$MYSQL_USER'@'%';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';
 FLUSH PRIVILEGES;
 EOF
 
