@@ -31,9 +31,6 @@ RUN apt install -yq php7.3 \
                     php7.3-zip \
                     curl
 
-# Copy WordPress config file to a tmp directory
-COPY ./config/wp-config.php /tmp/
-
 # Copy and run install_wordpress script as an entrypoint
 COPY ./tools/install_wordpress.sh /tmp/
 ENTRYPOINT [ "sh", "-c", "/bin/bash /tmp/install_wordpress.sh;" ]

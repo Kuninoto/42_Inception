@@ -1,6 +1,4 @@
-#!/bin/sh
-
-#!TODO set a user named nnuno-ca
+sudo useradd nnuno-ca --no-create-home "nnuno-ca" --password "plsdonthackme123"
 
 sudo apt update -yq && sudo apt upgrade -yq
 
