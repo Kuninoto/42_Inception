@@ -19,7 +19,19 @@ mv wp-cli.phar /usr/local/bin/wp-cli
 # Downloads the latest version of WordPress to the current directory
 wp-cli core download --allow-root
 
-wp-cli core config --dbname=$MYSQL_DB_NAME --dbuser=$MYSQL_USER --dbpass=$MYSQL_PASSWORD --dbhost=$MYSQL_DB_HOST --allow-root
+# Move our WordPress config file to its expected directory
+mv /tmp/wp-config.php /var/www/html/
+
+# Alter the WordPress default config file
+# Search for the first occurance of left field and substitute for the right field
+#line 23
+sed -i -r "s/database_name_here/$MYSQL_DB_NAME/1" /var/www/html/wp-config.php
+#line 26
+sed -i -r "s/username_here/$MYSQL_USER/1" /var/www/html/wp-config.php
+#line 29
+sed -i -r "s/password_here/$MYSQL_PASSWORD/1" /var/www/html/wp-config.php
+#line 32
+sed -i -r "s/localhost/$MYSQL_DB_HOST/1" /var/www/html/wp-config.php
 
 # Installs WordPress and sets up the basic configuration for the site.
 # --url specifies the URL of the site
