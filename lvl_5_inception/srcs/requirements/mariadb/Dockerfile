@@ -9,12 +9,8 @@ LABEL description="MariaDB Docker image for the Inception 42 project"
 RUN apt-get update -yq && apt-get upgrade -yq
 
 # Install MariaDB
-RUN apt install mariadb-server -yq
+RUN apt install -yq mariadb-server
 
 # Copy and run mysql_setup script
-COPY ./tools/mysql_setup.sh /mysql_setup.sh
-RUN bash mysql_setup.sh
-
-# Start the MySQL server process in the foreground,
-# thus keeping the container alive
-CMD ["mysqld"]
+COPY ./tools/mysql_setup.sh /tmp/mysql_setup.sh
+ENTRYPOINT [ "sh", "-c", "/bin/bash /tmp/mysql_setup.sh;" ]

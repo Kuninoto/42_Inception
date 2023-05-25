@@ -9,7 +9,7 @@ LABEL description="Nginx Docker image for the Inception 42 project"
 RUN apt-get update -yq && apt-get upgrade -yq
 
 # Install nginx and openssl
-RUN apt install nginx openssl -yq
+RUN apt install -yq nginx openssl
 
 # Copy pre-designed config file to the container
 COPY /config/nginx.conf /etc/nginx/

@@ -31,17 +31,9 @@ RUN apt install -yq php7.3 \
                     php7.3-zip \
                     curl
 
-# Copy config file to its expected directory
-COPY /config/www.conf /etc/php/7.3/fpm/pool.d/www.conf
-
-# Copy WordPress config file
+# Copy WordPress config file to a tmp directory
 COPY ./config/wp-config.php /tmp/
 
-# Copy the install_wordpress script
+# Copy and run install_wordpress script as an entrypoint
 COPY ./tools/install_wordpress.sh /tmp/
-
-# Run install_wordpress script
-RUN bash /tmp/install_wordpress.sh
-
-# Run php-fpm7.3 in the foreground thus keeping the container alive
-CMD ["php-fpm7.3", "-F", "-R"]
+ENTRYPOINT [ "sh", "-c", "/bin/bash /tmp/install_wordpress.sh;" ]

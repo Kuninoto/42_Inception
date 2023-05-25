@@ -8,11 +8,8 @@ all: build up_detached
 build:
 #	Create expected directories for the Docker volumes
 
-#	@mkdir -p /home/nnuno-ca/data;
-#	@mkdir -p /home/nnuno-ca/data/mariadb_data /home/nnuno-ca/data/wordpress_data;
-
-	@mkdir -p /home/kuninoto/data;
-	@mkdir -p /home/kuninoto/data/mariadb_data /home/kuninoto/data/wordpress_data;
+	@mkdir -p /home/${USER}/data;
+	@mkdir -p /home/${USER}/data/mariadb_data /home/kuninoto/data/wordpress_data;
 
 	@if ! [ -f srcs/.env ]; then \
 		echo "Inception: error: .env file not found, please provide one like the example \".env.example\""; \
@@ -20,13 +17,10 @@ build:
 	fi
 #   --no-cache prevents the docker compose from pulling the 
 #   official images for the services (e.g the official Nginx image)
-	docker-compose -f $(COMPOSE_FILE_PATH) build --no-cache
+	docker-compose -f $(COMPOSE_FILE_PATH) build --no-cache --progress=plain
 
 up_detached: 
 	docker-compose -f $(COMPOSE_FILE_PATH) up -d
-
-up: 
-	docker-compose -f $(COMPOSE_FILE_PATH) up
 
 down:
 	docker-compose -f $(COMPOSE_FILE_PATH) down
@@ -49,8 +43,11 @@ rmi: stop
 delete_volumes:
 	docker-compose -f $(COMPOSE_FILE_PATH) down --volumes
 
-re: rm rmi delete_volumes all ps
+system_prune:
+	docker system prune
 
-fclean: rm rmi
+re: fclean all ps
 
-.PHONY: all build up up_detached down start stop ps rm delete_volumes
+fclean: delete_volumes rm rmi
+
+.PHONY: all build up_detached down start stop ps rm delete_volumes

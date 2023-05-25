@@ -22,15 +22,26 @@ wp-cli core download --allow-root
 # Move our WordPress config file to its expected directory
 mv /tmp/wp-config.php /var/www/html/
 
+# Alter the WordPress default config file
+# Search for the first occurance of left field and substitute for the right field
+#line 23
+sed -i -r "s/database_name_here/$MYSQL_DB_NAME/1" /var/www/html/wp-config.php
+#line 26
+sed -i -r "s/username_here/$MYSQL_USER/1" /var/www/html/wp-config.php
+#line 29
+sed -i -r "s/password_here/$MYSQL_PASSWORD/1" /var/www/html/wp-config.php
+#line 32
+sed -i -r "s/localhost/$MYSQL_DB_HOST/1" /var/www/html/wp-config.php
+
 # Installs WordPress and sets up the basic configuration for the site.
 # --url specifies the URL of the site
 # --title sets the site's title
 # --admin_user, --admin_password and --admin_email sets admin's username, password and email
 # --skip-email prevents wp-cli from sending an email to the administrator with the login details.
-wp-cli core install --url="$WP_DOMAIN_NAME" \
-                    --title="$WP_TITLE" \
-                    --admin_user="$WP_ADMIN_USER" --admin_password="$WP_ADMIN_PASSWORD" \
-                    --admin_email="$WP_ADMIN_EMAIL" --skip-email \
+wp-cli core install --url=$WP_DOMAIN_NAME/ \
+                    --title=$WP_TITLE \
+                    --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASSWORD \
+                    --admin_email=$WP_ADMIN_EMAIL --skip-email \
                     --allow-root
 
 # Creates a new user account with the specified username, email adress and password
@@ -47,3 +58,6 @@ sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm
 
 # Creates /run/php directory, which is used by PHP-FPM to store Unix domain sockets
 mkdir /run/php
+
+# Run php-fpm7.3 in the foreground thus keeping the container alive
+php-fpm7.3 -F -R

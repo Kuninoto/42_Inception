@@ -16,9 +16,9 @@ volumes:
       type: none
       # Mount as bind
       o: bind
-      #!TODO comment this path and uncomment the one bellow 
       device: /home/kuninoto/data/mariadb_data
-      #device: /home/nnuno-ca/data/mariadb_data
+      # device: /home/kuninoto/data/mariadb_data
+
 
   wordpress_data:
     name: wordpress_data
@@ -28,10 +28,8 @@ volumes:
       type: none
       # Mount as bind
       o: bind
-      #!TODO comment this path and uncomment the one bellow
       device: /home/kuninoto/data/wordpress_data
-      #device: /home/nnuno-ca/data/wordpress_data
-
+      # device: /home/nnuno-ca/data/wordpress_data
 
 # Docker networks allow containers
 # in the same network to communicate
@@ -51,10 +49,11 @@ services:
     # directory inside the container
     volumes:
       - mariadb_data:/var/lib/mysql
-    env_file: .env
     networks:
       - inception-network
     restart: on-failure
+    env_file:
+      - .env
 
   wordpress:
     container_name: wordpress
@@ -62,6 +61,7 @@ services:
     image: wordpress
     depends_on:
       - mariadb
+    # Ensure that MariaDB's container up and running
     init: true
     networks:
       - inception-network
@@ -69,9 +69,9 @@ services:
     # directory inside the container
     volumes:
       - wordpress_data:/var/www/html
-    # Ensure that MariaDB's container up and running
-    env_file: .env
     restart: on-failure
+    env_file:
+      - .env
 
   nginx:
     container_name: nginx
@@ -88,5 +88,4 @@ services:
     # directory inside the container
     volumes:
       - wordpress_data:/var/www/html
-    env_file: .env
     restart: on-failure
