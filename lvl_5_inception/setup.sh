@@ -1,4 +1,4 @@
-sudo useradd nnuno-ca --no-create-home "nnuno-ca" --password "plsdonthackme123"
+sudo useradd --create-home --password plsdonthackme123 nnuno-ca
 
 sudo apt update -yq
 
@@ -34,7 +34,7 @@ else
 fi
 
 # Allow non-root users to run Docker
-#sudo chmod 666 /var/run/docker.sock
+sudo chmod 666 /var/run/docker.sock
 
 # Create expected directories for the Docker volumes
 mkdir -p /home/nnuno-ca/data;
