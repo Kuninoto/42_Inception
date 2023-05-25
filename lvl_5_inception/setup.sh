@@ -17,13 +17,14 @@ echo \
 
 sudo apt-get update -yq
 
-# Install Docker && Docker-Compose
+# Install Docker, Docker-Compose and Makefile
 sudo apt-get install -yq docker-ce\
                          docker-ce-cli\
                          containerd.io\
                          docker-buildx-plugin\
                          docker-compose-plugin\
-                         docker-compose
+                         docker-compose\
+                         make
 
 # Check if both Docker and Docker-Compose were correctly installed
 if [[ -x $(command -v "docker") && -x $(command -v "docker-compose") ]]; then
