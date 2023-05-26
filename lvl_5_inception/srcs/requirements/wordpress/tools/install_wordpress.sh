@@ -55,9 +55,10 @@ if ! [ -f "/var/www/html/wp-config.php" ]; then
     # this changes the socket that PHP-FPM listens on from a Unix domain socket to a TCP port
     sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm/pool.d/www.conf
 
-    # Creates /run/php directory, which is used by PHP-FPM to store Unix domain sockets
-    mkdir /run/php
 fi
+
+# Creates /run/php directory, which is used by PHP-FPM to store Unix domain sockets
+mkdir -p /run/php
 
 # Run php-fpm7.3 in the foreground thus keeping the container alive
 php-fpm7.3 -F -R

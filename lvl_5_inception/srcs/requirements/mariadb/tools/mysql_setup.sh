@@ -15,10 +15,6 @@ if ! [ -d "/var/lib/mysql/$MYSQL_DB_NAME" ]; then
     echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD' ;" >> temp.sql
     echo "FLUSH PRIVILEGES;" >> temp.sql
 
-    echo "-----------------------------"
-    cat temp.sql
-    echo "-----------------------------"
-
     mysql < temp.sql
     rm temp.sql
 fi

@@ -112,7 +112,7 @@ Generating a self-signed certificate
 **General**  
 [How to install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)  
 [How Docker really works under the hood](https://www.youtube.com/watch?v=-YnMr1lj4Z8)  
-
+[Docker-compose up, down, stop, start difference](https://stackoverflow.com/questions/46428420/docker-compose-up-down-stop-start-difference)  
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
 <div id="badge"> <a href="https://www.linkedin.com/in/nuno-carvalho-218822247"/> <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>&nbsp;
