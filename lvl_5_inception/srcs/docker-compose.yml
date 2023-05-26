@@ -17,7 +17,7 @@ volumes:
       # Mount as bind
       o: bind
       device: /home/kuninoto/data/mariadb_data
-      # device: /home/kuninoto/data/mariadb_data
+      # device: /home/nnuno-ca/data/mariadb_data
 
 
   wordpress_data:
@@ -44,7 +44,7 @@ services:
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb/.
-    image: mariadb
+    image: mariadb:inception
     # bind mariadb_data volume to /var/lib/mysql
     # directory inside the container
     volumes:
@@ -58,7 +58,7 @@ services:
   wordpress:
     container_name: wordpress
     build: ./requirements/wordpress/.
-    image: wordpress
+    image: wordpress:inception
     depends_on:
       - mariadb
     # Ensure that MariaDB's container up and running
@@ -76,7 +76,7 @@ services:
   nginx:
     container_name: nginx
     build: ./requirements/nginx/.
-    image: nginx
+    image: nginx:inception
     # port mapping
     ports:
       - 443:443

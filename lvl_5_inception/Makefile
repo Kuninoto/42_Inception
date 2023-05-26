@@ -3,13 +3,13 @@ COMPOSE_FILE_PATH=./srcs/docker-compose.yml
 #!TODO uncomment the nnuno-ca paths
 # comment kuninoto
 
-all: build up_detached
+all: build up_detached ps
 
 build:
 #	Create expected directories for the Docker volumes
 
 	@mkdir -p /home/${USER}/data;
-	@mkdir -p /home/${USER}/data/mariadb_data /home/kuninoto/data/wordpress_data;
+	@mkdir -p /home/${USER}/data/mariadb_data /home/${USER}/data/wordpress_data;
 
 	@if ! [ -f srcs/.env ]; then \
 		echo "Inception: error: .env file not found, please provide one like the example \".env.example\""; \
