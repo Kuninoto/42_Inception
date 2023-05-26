@@ -43,6 +43,3 @@ sudo chmod 666 /var/run/docker.sock
 # Create expected directories for the Docker volumes
 mkdir -p /home/nnuno-ca/data;
 mkdir -p /home/nnuno-ca/data/mariadb_data /home/nnuno-ca/data/wordpress_data
-
-# Request NGINX
-# curl --insecure -i https://localhost:443
