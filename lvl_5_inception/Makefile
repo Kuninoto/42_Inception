@@ -33,6 +33,7 @@ down:
 
 start:
 	docker compose -f $(COMPOSE_FILE_PATH) start
+	sudo bash ./srcs/requirements/tools/set_hosts.sh
 
 stop:
 	docker compose -f $(COMPOSE_FILE_PATH) stop
@@ -48,6 +49,7 @@ rmi: stop
 
 delete_volumes:
 	docker compose -f $(COMPOSE_FILE_PATH) down --volumes
+	sudo rm -rf /home/nnuno-ca/data
 
 system_prune:
 	docker system prune

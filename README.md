@@ -1,6 +1,6 @@
 # Inception (42Porto - 42Cursus) <img src="https://github.com/devicons/devicon/blob/master/icons/bash/bash-original.svg" title="Bash" alt="Bash Logo" width="50" height="60" align="right" />&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" title="Linux" alt="Linux Logo" width="50" height="60" align="right" />&nbsp; <img src="https://github.com/devicons/devicon/blob/master/icons/docker/docker-original.svg" title="Docker" alt="Docker Logo" width="70" height="70" align="right" />&nbsp;
 
-## Grade: ?/100
+## Grade: 100/100
 
 ### Subject (v1.3): [Inception en_subject](./extras/en.subject_inception.pdf)  
 
@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 [RUN vs CMD vs ENTRYPOINT](https://www.geeksforgeeks.org/difference-between-run-vs-cmd-vs-entrypoint-docker-commands/)  
 [COPY | Getting Your Own Code in a Docker Container | Beginner's Tutorial](https://www.youtube.com/watch?v=rI6mrsjFHII)  
 
-**Docker Volumes**
+**Docker Volumes**  
 [Official Docs](https://docs.docker.com/storage/volumes/)  
 [CLI](https://docs.docker.com/engine/reference/commandline/volume_create/)  
 [What are Docker volumes and how do you use them?](https://www.howtogeek.com/devops/what-are-docker-volumes-and-how-do-you-use-them/)  
@@ -41,12 +41,12 @@ https://www.youtube.com/watch?v=cjXI-yxqGTI
 [Docker Volumes Explained (PostgreSQL example)](https://www.youtube.com/watch?v=G-5c25DYnfI)  
 [Docker Volumes with Persistent Data in Containers | Beginners Tutorial](https://www.youtube.com/watch?v=OrQLrqQm4M0)  
 
-**Docker Networking**
+**Docker Networking**  
 [Tutorial, all network types explained](https://www.youtube.com/watch?v=5grbXvV_DSk)  
 [40min video](https://www.youtube.com/watch?v=bKFMS5C4CG0)  
 [Bridge Networks](https://docs.docker.com/network/bridge/)  
 
-**Docker Compose File**
+**Docker Compose File**  
 [Official Docs](https://docs.docker.com/compose/)  
 [Reference](https://docs.docker.com/engine/reference/commandline/compose/)  
 [20m Tutorial](https://www.youtube.com/watch?v=qH4ZKfwbO8w)  
@@ -104,15 +104,19 @@ Generating a self-signed certificate
 
 **MariaDB**  
 [Introduction](https://www.redhat.com/sysadmin/mysql-mariadb-introduction)  
+Installing MariaDB on Ubuntu  
+    - https://devopscube.com/install-mariadb-on-ubuntu/  
+    - https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04
 
 **WordPress**  
-[Installing WordPress with LEMP stack](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10#step-4-downloading-wordpress)
+[Installing WordPress with LEMP stack](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-nginx-mariadb-and-php-on-debian-10#step-4-downloading-wordpress)  
 [wp-cli](https://make.wordpress.org/cli/handbook/guides/installing/)  
 
 **General**  
 [How to install Linux, Nginx, MariaDB, PHP (LEMP stack) on Debian 10](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mariadb-php-lemp-stack-on-debian-10)  
 [How Docker really works under the hood](https://www.youtube.com/watch?v=-YnMr1lj4Z8)  
 [Docker-compose up, down, stop, start difference](https://stackoverflow.com/questions/46428420/docker-compose-up-down-stop-start-difference)  
+
 ---
 Made by Nuno Carvalho (Kuninoto) | nnuno-ca@student.42porto.com  
 <div id="badge"> <a href="https://www.linkedin.com/in/nuno-carvalho-218822247"/> <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>&nbsp;
