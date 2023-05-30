@@ -4,6 +4,20 @@
 
 ### Subject (v1.3): [Inception en_subject](./extras/en.subject_inception.pdf)  
 
+### Installing and running the project:
+1- Install Docker: [install Docker engine official docs](https://docs.docker.com/engine/install/)  
+2- Clone this repository
+
+    git clone https://github.com/Kuninoto/42_Inception
+3- Navigate to _lvl_5_inception_ 
+
+    cd 42_Inception/lvl_5_inception
+4- Write a .env file like the one on srcs/.env.example to use your very own configurations  
+5- Run `make` with sudo privileges
+
+    sudo make
+6- Open up your favourite browser and search for https://<your_choosen_wp_domain_name>:8080
+
 ### Useful links:  
 
 **What is Docker?**  
