@@ -16,7 +16,7 @@
 5- Run `make` with sudo privileges
 
     sudo make
-6- Open up your favourite browser and search for https://nnuno-ca.42.fr
+6- Open up your favourite browser and search for https://www.nnuno-ca.42.fr
 
 ### Useful links:  
 
